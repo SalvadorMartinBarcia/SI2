@@ -1,0 +1,53 @@
+Buildfile: /home/draxter/Desktop/P1-ejb/build.xml
+
+limpiar-todo:
+   [delete] Deleting directory /home/draxter/Desktop/P1-ejb/build
+   [delete] Deleting directory /home/draxter/Desktop/P1-ejb/dist
+
+montar-jerarquia:
+    [mkdir] Created dir: /home/draxter/Desktop/P1-ejb/build
+    [mkdir] Created dir: /home/draxter/Desktop/P1-ejb/build/client
+    [mkdir] Created dir: /home/draxter/Desktop/P1-ejb/build/client/WEB-INF/classes
+    [mkdir] Created dir: /home/draxter/Desktop/P1-ejb/build/client/WEB-INF/lib
+    [mkdir] Created dir: /home/draxter/Desktop/P1-ejb/build/server
+    [mkdir] Created dir: /home/draxter/Desktop/P1-ejb/dist
+    [mkdir] Created dir: /home/draxter/Desktop/P1-ejb/dist/client
+    [mkdir] Created dir: /home/draxter/Desktop/P1-ejb/dist/server
+
+compilar-servidor:
+    [javac] Compiling 5 source files to /home/draxter/Desktop/P1-ejb/build/server
+    [javac] Note: /home/draxter/Desktop/P1-ejb/src/server/ssii2/visa/DBTester.java uses or overrides a deprecated API.
+    [javac] Note: Recompile with -Xlint:deprecation for details.
+
+montar-jerarquia:
+
+compilar-cliente:
+    [javac] Compiling 14 source files to /home/draxter/Desktop/P1-ejb/build/client/WEB-INF/classes
+    [javac] Note: /home/draxter/Desktop/P1-ejb/src/client/ssii2/visa/DBTester.java uses or overrides a deprecated API.
+    [javac] Note: Recompile with -Xlint:deprecation for details.
+
+preparar-meta-inf-servidor:
+     [copy] Copying 2 files to /home/draxter/Desktop/P1-ejb/build/server
+
+empaquetar-servidor:
+      [jar] Building jar: /home/draxter/Desktop/P1-ejb/dist/server/P1-ejb.jar
+
+preparar-web-inf-cliente:
+     [copy] Copying 11 files to /home/draxter/Desktop/P1-ejb/build/client
+
+empaquetar-cliente:
+      [jar] Building jar: /home/draxter/Desktop/P1-ejb/dist/client/P1-ejb-cliente.war
+
+empaquetar-aplicacion:
+      [ear] Building ear: /home/draxter/Desktop/P1-ejb/dist/P1-ejb.ear
+
+desplegar:
+     [exec] Command deploy failed.
+     [exec] remote failure: Error occurred during deployment: Exception while deploying the app [P1-ejb] : Invalid ejb jar [P1-ejb.jar]: it contains zero ejb. 
+     [exec] Note: 
+     [exec] 1. A valid ejb jar requires at least one session, entity (1.x/2.x style), or message-driven bean. 
+     [exec] 2. EJB3+ entity beans (@Entity) are POJOs and please package them as library jar. 
+     [exec] 3. If the jar file contains valid EJBs which are annotated with EJB component level annotations (@Stateless, @Stateful, @MessageDriven, @Singleton), please check server.log to see whether the annotations were processed properly.. Please see server.log for more details.
+
+BUILD SUCCESSFUL
+Total time: 5 seconds
